@@ -47,11 +47,36 @@ class Aligent_Availableaddresses_Block_Onepage_Shipping extends Mage_Checkout_Bl
     }
     
     /**
+     * Use the shipping country collection to generate the JSON list of region codes
+     * @TODO: consider moving this to a helper so other elements can use it
+     */
+    public function getShippingRegionJson(){
+        foreach ($this->getCountryCollection() as $country) {
+            $countryIds[] = $country->getCountryId();
+        }
+        $collection = Mage::getModel('directory/region')->getResourceCollection()
+            ->addCountryFilter($countryIds)
+            ->load();
+        $regions = array();
+        foreach ($collection as $region) {
+            if (!$region->getRegionId()) {
+                continue;
+            }
+            $regions[$region->getCountryId()][$region->getRegionId()] = array(
+                'code' => $region->getCode(),
+                'name' => $this->__($region->getName())
+            );
+        }
+        $json = Mage::helper('core')->jsonEncode($regions);
+        return $json;
+    }
+    
+    /**
      * insert the shipping-specific allowed countries, and perform a string replace to use the Aligent extended RegionUpdater
      */
     public function _toHtml() {
         $vBaseHtml = parent::_toHtml();
-        $vShippingRegionJson = '<script type="text/javascript">countryShippingRegions = '.$this->getCountryHtmlSelect('shipping').'</script>';
+        $vShippingRegionJson = '<script type="text/javascript">countryShippingRegions = '.$this->getShippingRegionJson().'</script>';
         
         $vUpdatedBaseHtml = str_replace('RegionUpdater','AligentRegionUpdater',$vBaseHtml);
         

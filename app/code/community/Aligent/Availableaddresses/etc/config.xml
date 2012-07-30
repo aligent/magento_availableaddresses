@@ -14,7 +14,24 @@
         </Aligent_Availableaddresses>
     </modules>
     <frontend>
+        <layout>
+            <updates>
+                <availableaddresses module="Aligent_Availableaddresses">
+                    <file>availableaddresses.xml</file>
+                </availableaddresses>
+            </updates>
+        </layout>
     </frontend>
     <global>
+        <blocks>
+            <availableaddresses>
+                <class>Aligent_Availableaddresses_Block</class>
+            </availableaddresses>
+            <checkout>
+                <rewrite>
+                    <onepage_shipping>Aligent_Availableaddresses_Block_Onepage_Shipping</onepage_shipping>
+                </rewrite>
+            </checkout>
+        </blocks>
     </global>
 </config>

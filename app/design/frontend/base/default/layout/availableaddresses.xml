@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <checkout_cart_index>
+        <reference name="head">
+            <action method="addJs"><script>aligent/availableaddresses.js</script></action>
+        </reference>
+    </checkout_cart_index>
+    
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addJs"><script>aligent/availableaddresses.js</script></action>
+        </reference>
+    </checkout_onepage_index>
+    
+
+    <checkout_multishipping>
+        <reference name="head">
+            <action method="addJs"><script>aligent/availableaddresses.js</script></action>
+        </reference>
+    </checkout_multishipping>
+
+</layout>

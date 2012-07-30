@@ -34,7 +34,7 @@ class Aligent_Availableaddresses_Block_Onepage_Shipping extends Mage_Checkout_Bl
     }
     
     /**
-     * Rewrite to add cache key for Shipping Country cache key
+     * Rewrite to lookup the countries specified by administrator for SHIPPING
      */
     public function getCountryCollection()
     {
@@ -46,10 +46,12 @@ class Aligent_Availableaddresses_Block_Onepage_Shipping extends Mage_Checkout_Bl
         return $aShipCountryCollection;
     }
     
+    /**
+     * insert the shipping-specific allowed countries, and perform a string replace to use the Aligent extended RegionUpdater
+     */
     public function _toHtml() {
         $vBaseHtml = parent::_toHtml();
-//        $vShippingRegionJson = '<script type="text/javascript">countryShippingRegions = '.$this->helper('directory')->getRegionJson().'</script>';
-        $vShippingRegionJson = '<script type="text/javascript">countryShippingRegions = {"AU":{"493":{"code":"ACT","name":"Australian Capital Territory"},"494":{"code":"NSW","name":"New South Wales"},"495":{"code":"NT","name":"Northern Territory"},"496":{"code":"QLD","name":"Queensland"},"497":{"code":"SA","name":"South Australia"},"498":{"code":"TAS","name":"Tasmania"},"499":{"code":"VIC","name":"Victoria"},"500":{"code":"WA","name":"Western Australia"}}}</script>';
+        $vShippingRegionJson = '<script type="text/javascript">countryShippingRegions = '.$this->getCountryHtmlSelect('shipping').'</script>';
         
         $vUpdatedBaseHtml = str_replace('RegionUpdater','AligentRegionUpdater',$vBaseHtml);
         

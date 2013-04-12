@@ -32,6 +32,11 @@
                     <onepage_shipping>Aligent_Availableaddresses_Block_Onepage_Shipping</onepage_shipping>
                 </rewrite>
             </checkout>
+            <directory>
+                <rewrite>
+                    <data>Aligent_Availableaddresses_Block_Data</data>
+                </rewrite>
+            </directory>
         </blocks>
     </global>
 </config>

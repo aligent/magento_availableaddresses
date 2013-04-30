@@ -78,7 +78,7 @@ class Aligent_Availableaddresses_Block_Onepage_Shipping extends Mage_Checkout_Bl
         $vBaseHtml = parent::_toHtml();
         $vShippingRegionJson = '<script type="text/javascript">countryShippingRegions = '.$this->getShippingRegionJson().'</script>';
         
-        $vUpdatedBaseHtml = str_replace('RegionUpdater','AligentRegionUpdater',$vBaseHtml);
+        $vUpdatedBaseHtml = str_replace('new RegionUpdater','new AligentRegionUpdater',$vBaseHtml);
         
         $html = $vShippingRegionJson.$vUpdatedBaseHtml;
         return $html;

@@ -21,6 +21,17 @@
                 </availableaddresses>
             </updates>
         </layout>
+        <events>
+            <customer_address_save_before>
+                <observers>
+                    <fix_default_address_issue>
+                        <type>singleton</type>
+                        <class>Aligent_Availableaddresses_Model_Observer</class>
+                        <method>interceptSaveAddress</method>
+                    </fix_default_address_issue>
+                </observers>
+            </customer_address_save_before>
+        </events>
     </frontend>
     <global>
         <blocks>

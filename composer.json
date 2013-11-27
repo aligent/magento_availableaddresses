@@ -1,0 +1,11 @@
+{
+    "name":"aligent/availableaddresses",
+    "type":"magento-module",
+    "license":"OSL-3.0",
+    "homepage":"https://github.com/aligent/magento_availableaddresses",
+    "description":"Allow admins to specify different Allowed Countries for billing and shipping addresses.",
+    "require":{
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
+

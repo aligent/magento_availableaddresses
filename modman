@@ -2,4 +2,4 @@
 app/code/community/Aligent/Availableaddresses app/code/community/Aligent/Availableaddresses
 app/etc/modules/Aligent_Availableaddresses.xml app/etc/modules/Aligent_Availableaddresses.xml
 app/design/frontend/base/default/layout/availableaddresses.xml app/design/frontend/base/default/layout/availableaddresses.xml
-js/aligent js/aligent
+js/aligent/availableaddresses.js js/aligent/availableaddresses.js

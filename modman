@@ -1,5 +1,5 @@
 # Aligent_Availableaddresses module definition.
-app/code/community/Aligent/Availableaddresses app/code/community/Aligent/Availableaddresses
-app/etc/modules/Aligent_Availableaddresses.xml app/etc/modules/Aligent_Availableaddresses.xml
-app/design/frontend/base/default/layout/availableaddresses.xml app/design/frontend/base/default/layout/availableaddresses.xml
-js/aligent/availableaddresses.js js/aligent/availableaddresses.js
+app/code/community/Aligent/* app/code/community/Aligent/
+app/etc/modules/* app/etc/modules/
+app/design/frontend/base/default/layout/* app/design/frontend/base/default/layout/
+js/aligent/* js/aligent/

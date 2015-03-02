@@ -1,5 +1,12 @@
 <?php
-class Aligent_Availableaddresses_Block_Onepage_Shipping extends Mage_Checkout_Block_Onepage_Shipping
+
+if (class_exists('Aligent_Base_Block_Checkout_Onepage_Shipping')) {
+    class Aligent_Availableaddresses_Block_Onepage_Shipping_Base extends Aligent_Base_Block_Checkout_Onepage_Shipping {}
+} else {
+    class Aligent_Availableaddresses_Block_Onepage_Shipping_Base extends Mage_Checkout_Block_Onepage_Shipping {}
+}
+
+class Aligent_Availableaddresses_Block_Onepage_Shipping extends Aligent_Availableaddresses_Block_Onepage_Shipping_Base
 {
     /**
      * Initialize shipping address step

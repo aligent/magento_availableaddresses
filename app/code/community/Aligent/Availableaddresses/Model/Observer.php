@@ -46,4 +46,5 @@ Class Aligent_Availableaddresses_Model_Observer {
         Mage::register('default_address_split',true);
         return $this;
     }
+
 }

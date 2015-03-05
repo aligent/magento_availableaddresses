@@ -49,5 +49,17 @@
                 </rewrite>
             </directory>
         </blocks>
+        <helpers>
+            <availableaddresses>
+                <class>Aligent_Availableaddresses_Helper</class>
+            </availableaddresses>
+        </helpers>
+        <models>
+            <checkout>
+                <rewrite>
+                    <type_onepage>Aligent_Availableaddresses_Model_Checkout_Type_Onepage</type_onepage>
+                </rewrite>
+            </checkout>
+        </models>
     </global>
 </config>
